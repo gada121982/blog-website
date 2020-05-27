@@ -1,6 +1,6 @@
 ## This is my source code blog 
 
-you can see demo here : https://www.gadadev.tk
+you can review demo here : https://www.gadadev.tk
 
 ---
 ## Tech stack
