@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="gada DEV - Chia sẻ kinh nghiệm lập trình"/>
+    <meta property="og:description" content="Hãy ghé thăm blog của mình để xem những bài viết thú vị nhé"/>
+    <meta property="og:image" content="https://res.cloudinary.com/vinhhai/image/upload/v1568551808/kpwg0vhe3tiumkbken15.png"/>
+    <meta property="og:author" content="https://www.facebook.com/vinhhai4199"/>
+    <meta name="google-site-verification" content="Cu4mwWevS1LvUegYSFYVsqP2Nxp-vimU5_YokRplPCg" />
+    <title>gada DEV</title>
+    <link rel="shortcut icon" type="image/png" href="./img/icon/favicon2.png">
+    <base href="/"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/12f31104f0.js"></script>
+    <link rel="stylesheet" href="./css/carousel/swiper.min.css">
+    <link rel="stylesheet" href="./css/main-style-min.css">
+    <link rel="stylesheet" href="./css/post.css">
+    <meta property="fb:admins" content="100004485549793"/>
+    <meta property="fb:app_id" content="378227049489227"/>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0&appId=378227049489227&autoLogAppEvents=1"></script>
+   
+    <div class="wrapper">
+            <header  >
+               
+                <div class="three-menu">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+                      
+                <div class="title-header">
+                <ul>
+                    <a href=""> <li>Home</li></a>
+                    <a href="#"><li>Contact</li></a>
+                    <a href="#"> <li>About</li></a>
+                </ul>
+                </div>
+            
+            
+               
+                <form action="/search" method="GET" >
+                    <i class="fas fa-search"></i>
+                     <input id="searchfor" type="text" name="q" placeholder="Search for" list="ide" autocomplete="off">
+                     <datalist id="ide">
+                        <option value="Javascript">Tìm hiểu về javascript</option>
+                        <option value="React">Những bài viết thú vị</option>
+                        <option value="Mongodb">Học mongodb cùng những ví dụ thực tế</option>
+                        <option value="Chia sẻ">Chia sẻ về đời sống và lập trình</option>
+                     </datalist>
+                 
+                 </form>
+        
+                
+                
+            
+            </header>
+            <div class="introduce-logo">
+                <a href="/"> <img src="./img/icon/logo-center.png" alt=""></a>
+            </div>
+            <!-- carousel -->
+           
+            <!-- ! beside-nav -->
+             <div class="beside-nav">
+               
+               <div class="title-nav">
+                  <ul>
+                      <a href=""> <li>Home</li></a>
+                      <a href="#"><li>Contact</li></a>
+                      <a href="#"> <li>About</li></a>
+                    </ul>
+
+              </div>
+              <div class="topic">
+                  <p>Topic</p>
+                   <div class="menu">
+                         <!-- !render o day -->
+                         <%
+                            
+                         
+                         arrayTLLT.forEach((ele)=>{%>
+                            
+                             <li class="item" >
+                                 <div  class="btn"><%- ele.tentheloai%></div>
+
+                                 <div class="smenu">
+                                     <%
+                                     ele.dsloaitin.forEach((eleIn)=>{%>
+                                         <a href="/<%- eleIn.tenkhongdau %>"><%- eleIn.tenloaitin %></a>
+                                     <%});     
+                                     %>                              
+                                 </div>
+                           </li>
+                           
+                         <%});
+                     
+                     %>
+
+
+                     
+                 
+                 <!-- !end -->
+                        
+                  </div>
+              
+            </div> 
+        </div>
+            <!-- ! that main content -->
+            <div class="main-section" >
+                <div class="section-right">
+    
+                    <div class="profile">
+                            <div class="title-profile">
+                              <p>Profile</p>
+                            </div>
+                            <div class="avatar">
+                                <img src="./img/imgHai.jpg" alt="avatar">
+                            </div>
+                            <div class="content-profile">
+                                <p class="Name">Nguyễn Vĩnh Hải</p>
+                                <p class="job">I'm developer</p>
+                            </div>
+                          
+                        </div>
+  
+                        <div class="social">
+                            <div class="title-social">
+                                <p>Social</p>
+                           </div>
+                            <div class="icon-social">
+                                <a href="https://www.facebook.com/vinhhai4199"  target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/vinhhai4199/"  target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://github.com/gada121982"  target="_blank"><i class="fab fa-github-square"></i></a>
+                                <a href="https://twitter.com/NguynVnhHi1"  target="_blank"><i class="fab fa-twitter-square"></i></a>
+                                <a href="https://www.youtube.com/channel/UC9tKRVhDASX17COSlSOG0yg?view_as=subscriber"  target="_blank"><i class="fab fa-youtube"></i></a>
+                            </div>
+                         
+  
+                        </div>
+  
+                        <div class="important-news">
+                            <div class="title-post-important">
+                                <p>My important posts</p>
+                            </div>
+                            <%
+
+                                if(importantNews != null){%>
+
+                                    <%
+                                    importantNews.forEach(function(ele){%>
+                                        
+                                        <div class="wrap-news-important">
+                                        <div class="img-impor">
+                                            <a href="/news/<%- ele._id%>"><img src="<%-ele.image%>" alt="picture"></a> 
+                                        </div>
+
+                                        <div class="content-important">
+                                            <a href="/news/<%-ele._id%>">
+                                                <p class="title-important">
+                                                    <%- ele.tieude %>
+                                                </p>
+                                            </a>
+                                        <a href="/news/<%-ele._id%>">
+                                            <p class="des-important">
+                                            
+                                                <%- ele.description%>
+                                            </p>
+                                        </a>
+                                        
+                                        </div>
+                                    </div>
+
+                                    <%})
+                                    %>
+                                <%} 
+
+                                if(importantNews == null){%>
+                                    <i style="font-size:120%">
+                                        Opps...! have't important news yet
+                                    </i>
+                                <%};
+
+                                %>
+
+
+                           
+                           
+                        </div>
+                  </div>
+              <!-- ? that main news-->
+                <div class="section-left">
+                    
+                    <%
+                        if(dataTinTuc != null)
+                        {%>
+                        <div class="post-title" style="margin-top: 100px;">
+                            <h2>
+                                <%-dataTinTuc.tieude%>
+                            </h2>
+                            <span class="date-post">
+                                <i class="far fa-clock"></i>
+                            <%- dataTinTuc.createat%> 
+                            </span> 
+                        </div>
+                    
+                        <!-- ! bỏ content ở đây -->
+                        <div class="place-for-content" style="margin: 0 10px;">
+                            <%- dataTinTuc.content%>
+                        </div>
+                        <!-- ! end bỏ content ở đây -->
+                        <%}
+                        if(dataTinTuc == null){%>
+                            <div class="post-title" style="margin-top: 100px;">
+                            
+                            <i style="font-size: 150%">
+                               Opps!.. Tin tức không tồn tại :(
+                            </i>
+                          </div>
+                            
+                        <%}
+                       
+                        
+                    %>
+                   
+                    <h4 class="title-reaction">React my post</h4>
+                          
+                    <div class="reaction">
+                        <div class="fb-like" data-href="https://www.gadadev.tk/news/<%- dataTinTuc._id %>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                    </div>
+                    <div class="reaction">
+                        <div class="fb-share-button" data-href="https://www.gadadev.tk/news/<%- dataTinTuc._id %>" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gadadev.tk%2Fnews%2F5d731645c7644f0017ec0e03&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                        
+                    </div>
+                    <div class="reaction">
+                        <a class="twitter-share-button" href="https://twitter.com/NguynVnhHi1">Tweet</a>
+                    </div>
+                    <div class="reaction">
+                        <a class="twitter-follow-button"
+                        href="https://twitter.com/NguynVnhHi1">
+                        Follow</a>
+                    </div>
+                   
+                    <h4 class="title-comment">Comments</h4>
+                       
+                       <div class="comment">
+                           <div class="fb-comments" data-href="https://www.gadadev.tk/news/<%- dataTinTuc._id %>" data-width="100%" data-numposts="5"></div>
+                      </div>
+                    
+                        
+                </div>
+              <!-- ?that end main news -->
+
+                
+
+            </div>
+            <div class="move-on-top">
+                <i class="fas fa-angle-double-up"></i>
+            </div>
+           
+           
+            <footer >
+              <div class="footer-social">
+                  <p>Make friend with me</p>
+                  <ul>
+                    <li><a href="https://www.facebook.com/vinhhai4199" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/NguynVnhHi1"  target="_blank">Twitter</a></li>
+                    <li><a href="https://www.youtube.com/channel/UC9tKRVhDASX17COSlSOG0yg?view_as=subscriber"  target="_blank">Youtube</a></li>
+                  </ul>
+              </div>
+              <div class="copy-right">
+                  <i class="far fa-copyright"></i>
+                  <p>Vĩnh Hải</p>
+              </div>       
+              <div class="map">
+               
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0680038494206!2d106.77962891535235!3d10.882432360202477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d885564fe55f%3A0x379c06540fbe1d54!2zS3nMgSBUw7pjIFjDoSBESFFHIFRQSENNIEtodSBC!5e0!3m2!1svi!2s!4v1565942525260!5m2!1svi!2s" frameborder="0" allowfullscreen></iframe>
+              </div>
+              
+         </footer>
+          
+      </div>   
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script> window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          
+            t._e = [];
+            t.ready = function(f) {
+              t._e.push(f);
+            };
+          
+            return t;
+          }(document, "script", "twitter-wjs"));
+</script>
+<script src="./js/animation-min.js"></script>
+<script src="./js/carousel/swiper.min.js"></script>
+<script src="./js/carousel.main.js"></script>
+
+
+</body>
+</html>

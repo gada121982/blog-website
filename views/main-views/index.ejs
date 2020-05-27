@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="fb:comments-count"/>
+    <meta property="og:title" content="gada DEV - Chia sẻ kinh nghiệm lập trình"/>
+    <meta property="og:description" content="Hãy ghé thăm blog của mình để xem những bài viết thú vị nhé"/>
+    <meta property="og:image" content="https://res.cloudinary.com/vinhhai/image/upload/v1568551808/kpwg0vhe3tiumkbken15.png"/>
+    <meta property="og:author" content="https://www.facebook.com/vinhhai4199"/>
+    <meta property="fb:admins" content="100004485549793"/>
+    <meta property="fb:app_id" content="378227049489227"/>
+    <meta name="google-site-verification" content="Cu4mwWevS1LvUegYSFYVsqP2Nxp-vimU5_YokRplPCg" />
+    <title>gada DEV</title>
+    <link rel="shortcut icon" type="image/png" href="./img/icon/favicon2.png">
+    <base href="/"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/12f31104f0.js"></script>
+    <link rel="stylesheet" href="./css/carousel/swiper.min.css">
+    <link rel="stylesheet" href="./css/main-style-min.css">
+    <link rel="stylesheet" href="./css/preload-min.css">
+    
+    
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0&appId=378227049489227&autoLogAppEvents=1"></script>
+   
+    <div class="preload">
+        <img src="./img/icon/logoMain.svg" alt="">
+    </div> 
+    <div class="wrapper hidden-wrapper">
+            <header  >
+               
+                <div class="three-menu">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+                      
+                <div class="title-header">
+                <ul>
+                    <a href=""> <li>Home</li></a>
+                    <a href="#"><li>Contact</li></a>
+                    <a href="#"> <li>About</li></a>
+                </ul>
+                </div>
+            
+            
+                <form action="/search" method="GET" >
+                   <i class="fas fa-search"></i>
+                    <input id="searchfor" type="text" name="q" placeholder="Search for" list="ide" autocomplete="off">
+                    <datalist id="ide">
+                       <option value="Javascript">Tìm hiểu về javascript</option>
+                       <option value="React">Những bài viết thú vị</option>
+                       <option value="Mongodb">Học mongodb cùng những ví dụ thực tế</option>
+                       <option value="Chia sẻ">Chia sẻ về đời sống và lập trình</option>
+                    </datalist>
+                
+                </form>
+        
+                
+                
+            
+            </header>
+            <div class="introduce-logo">
+               <a href="/"> <img src="./img/icon/logo-center.png" alt=""></a>
+            </div>
+            <!-- carousel -->
+            <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <a class="swiper-slide slide1" href="#">
+                            <div class="slide-content">
+                                    <i class="fas fa-user-graduate"></i>
+                                <span>
+                                    CHUYỆN ĐỜI SINH VIÊN
+                                </span>
+                            </div>
+                           
+                        </a>
+                        <a class="swiper-slide slide2" href="#">
+                            <div class="slide-content">
+                                    <i class="fas fa-code"></i>
+                                <span>
+                                   CHIA SẺ VỀ LẬP TRÌNH
+                                </span>
+                            </div>
+                           
+                        </a>
+                        <a class="swiper-slide slide3" href="#">
+                            <div class="slide-content">
+                                    <i class="fas fa-suitcase-rolling"></i>
+                                <span>
+                                   NHỮNG CHUYẾN ĐI XA
+                                </span>
+                            </div>
+                        </a>
+                        <a class="swiper-slide slide4" href="#">
+                            <div class="slide-content">
+                                <i class="fas fa-chess-queen"></i>
+                                <span>
+                                    JAVASCRIPT CONFERENCE
+                                </span>
+                            </div>
+                        </a>
+            
+                       
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                  
+                
+                  
+            </div>
+            <!-- ! beside-nav -->
+             <div class="beside-nav">
+               
+               <div class="title-nav">
+                  <ul>
+                      <a href=""> <li>Home</li></a>
+                      <a href="#"><li>Contact</li></a>
+                      <a href="/about"> <li>About</li></a>
+                    </ul>
+
+              </div>
+              <div class="topic">
+                  <p>Topic</p>
+                   <div class="menu">
+                    <!-- !render o day -->
+                        <%
+                            
+                         
+                            arrayTLLT.forEach((ele)=>{%>
+                               
+                                <li class="item" >
+                                    <div  class="btn"><%- ele.tentheloai%></div>
+
+                                    <div class="smenu">
+                                        <%
+                                        ele.dsloaitin.forEach((eleIn)=>{%>
+                                            <a href="/<%- eleIn.tenkhongdau %>"><%- eleIn.tenloaitin %></a>
+                                        <%});     
+                                        %>                              
+                                    </div>
+                              </li>
+                              
+                            <%});
+                        
+                        %>
+
+
+                        
+                    
+                    <!-- !end -->
+                </div>
+              
+            </div> 
+        </div>
+            <!-- ! that main content -->
+            <div class="main-section" >
+                <div class="section-right">
+    
+                    <div class="profile">
+                            <div class="title-profile">
+                              <p>Profile</p>
+                            </div>
+                            <div class="avatar">
+                                <img src="./img/imgHai.jpg" alt="avatar">
+                            </div>
+                            <div class="content-profile">
+                                <p class="Name">Nguyễn Vĩnh Hải</p>
+                                <p class="job">I'm developer</p>
+                            </div>
+                          
+                        </div>
+  
+                        <div class="social">
+                            <div class="title-social">
+                                <p>Social</p>
+                           </div>
+                            <div class="icon-social">
+                                <a href="https://www.facebook.com/vinhhai4199"  target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/vinhhai4199/"  target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://github.com/gada121982"  target="_blank"><i class="fab fa-github-square"></i></a>
+                                <a href="https://twitter.com/NguynVnhHi1"  target="_blank"><i class="fab fa-twitter-square"></i></a>
+                                <a href="https://www.youtube.com/channel/UC9tKRVhDASX17COSlSOG0yg?view_as=subscriber"  target="_blank"><i class="fab fa-youtube"></i></a>
+                            </div>
+                         
+  
+                        </div>
+  
+                        <div class="important-news">
+                            <div class="title-post-important">
+                                <p>My important posts</p>
+                            </div>
+                            <%
+
+                                    if(importantNews != null){%>
+
+                                        <%
+                                        importantNews.forEach(function(ele){%>
+                                            
+                                            <div class="wrap-news-important">
+                                            <div class="img-impor">
+                                                <a href="/news/<%- ele._id%>"><img src="<%-ele.image%>" alt="picture"></a> 
+                                            </div>
+                                    
+                                            <div class="content-important">
+                                                <a href="/news/<%-ele._id%>">
+                                                    <p class="title-important">
+                                                        <%- ele.tieude %>
+                                                    </p>
+                                                </a>
+                                            <a href="/news/<%-ele._id%>">
+                                                <p class="des-important">
+                                                
+                                                    <%- ele.description%>
+                                                </p>
+                                            </a>
+                                            
+                                            </div>
+                                        </div>
+
+                                        <%})
+                                        %>
+                                    <%} 
+                            
+                                    if(importantNews == null){%>
+                                        <i style="font-size:120%">
+                                            Opps...! have't important news yet
+                                        </i>
+                                    <%};
+                            
+                              %>
+                            
+                          
+                        </div>
+                </div>
+              <!-- ? that main news-->
+                <div class="section-left">
+                        <%
+                            if(keyWordSearch){%>
+
+                                <div class="searchresult">
+                                    <h4>Kết quả tìm kiếm cho từ khóa "<%- keyWordSearch %>"</h4><br>
+                                    <span>Có <%- lengthSearch%> được tìm thấy</span>
+                                </div>
+                              
+
+                            <%}
+                        %>
+                      
+                        <div class="title-post">
+                          <p>My posts</p>
+                        </div>
+
+                         <div class="place-post-news">
+                            
+                            <%
+                                if(dataTinTuc.length !== 0)
+                                {%> 
+
+                                    <%
+                                    dataTinTuc.forEach(function(element){%>
+                                    <div class="wrapper-news">
+                                    <div class="img-news-outside">
+                                        <a href="news/<%- element.data._id%>">
+                                        <img src="<%= element.data.image%>" alt="#" class="img-news">
+                                        </a>
+                                    </div>
+                                                            
+                                        <div class="content-news">
+                                            <!-- !1  -->
+                                            <div class="title-news">
+                                                <a href="news/<%- element.data._id%>"> 
+                                                    <p >
+                                                        <%= element.data.tieude %>
+                                                    </p>
+                                                </a>       
+                                            </div>                          
+                                            <!-- !2  -->
+                                            <p class="date-news">
+                                            <%= element.data.createat%>
+                                            </p>
+                                            <!-- !3  -->
+                                            <div class="description-outside">
+                                                <a href="news/<%- element.data._id%>">
+                                                    <p class="description">
+                                                        <%= element.data.description%> 
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <!-- !4   -->
+                                            <div class="wrapper-like-com">
+                                                <div class="count-like-com-share">
+                                                    <p><%- element.fb.reaction_count%></p>
+                                                    <p><%- element.fb.comment_plugin_count%></p>
+                                                    <p><%- element.fb.share_count %></p>
+                                                </div>
+                                                <div class="icon-like-com">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                    <i class="fas fa-comment"></i>
+                                                    <i class="fas fa-share-square"></i>
+                                                </div>
+                                            </div>
+                                            </div>
+                                    
+                                
+                                    </div> 
+                                    <%})
+                                    %>
+                                <%}
+                                else{%>
+                                    <div style="text-align: center;">
+                                        <span style="font-size: 1.5em">  Opps...! have't news yet </span>
+                                    </div>
+                                   
+                                <%}
+
+                              
+                            %>
+                           
+                
+                            
+                        </div>
+                    <%
+                        if(!closeloadmore){%>
+                            <div class="load-more">
+                            <span >Load more</span>
+                        
+                             </div>
+                        <%}
+                    %>
+                  
+                        
+                </div>
+              <!-- ?that end main news -->
+
+                
+
+            </div>
+
+            <div class="move-on-top">
+                <i class="fas fa-angle-double-up"></i>
+            </div>
+           
+            <footer >
+              <div class="footer-social">
+                  <p>Make friend with me</p>
+                  <ul>
+                    <li><a href="https://www.facebook.com/vinhhai4199" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/NguynVnhHi1"  target="_blank">Twitter</a></li>
+                    <li><a href="https://www.youtube.com/channel/UC9tKRVhDASX17COSlSOG0yg?view_as=subscriber"  target="_blank">Youtube</a></li>
+                  </ul>
+              </div>
+              <div class="copy-right">
+                  <i class="far fa-copyright"></i>
+                  <p>Vĩnh Hải</p>
+              </div>       
+              <div class="map">
+                 
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0680038494206!2d106.77962891535235!3d10.882432360202477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d885564fe55f%3A0x379c06540fbe1d54!2zS3nMgSBUw7pjIFjDoSBESFFHIFRQSENNIEtodSBC!5e0!3m2!1svi!2s!4v1565942525260!5m2!1svi!2s" frameborder="0" allowfullscreen></iframe>
+              </div>
+              
+         </footer>
+          
+      </div>   
+  
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="./js/reload.js"></script>
+<script src="./js/animation.js"></script>
+<script src="./js/carousel/swiper.min.js"></script>
+<script src="./js/carousel.main.js"></script>
+<script src="./js/pagination-min.js"></script>
+
+
+
+</body>
+</html>

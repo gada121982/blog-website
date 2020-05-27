@@ -1,0 +1,129 @@
+
+        <%- include('../layout/header.admin.ejs') -%>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Tin tức
+                            <small>Add</small>
+                        </h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <div class="col-lg-7" style="padding-bottom:120px">
+                            <% if(succesful === 1){%>
+                                <div class="alert alert-success" role="alert">Thêm thành công </div>
+                            <% }%>
+                        <form action="admin/tintuc/add" method="POST" enctype="multipart/form-data"
+                            
+                                <!-- thể loại -->
+                                <div class="form-group" >
+                                    <label>Thể loại</label>
+                                    <select class="form-control" name="theloai" id="theloaiAjax">
+                                        <% 
+                                        dataTheLoai.forEach((element)=>{%>
+                                                <option ><%= element.ten%></option>
+                                        <%})
+                                        %>
+                                    </select>
+                                </div>
+
+                                    <%# Tên loại tin%>
+                               <div class="form-group">
+                                    <label>Loại tin</label>
+                                    <select class="form-control" name="loaitin" id="loaiTinAjax">
+                                       
+                                    </select>
+                               </div>
+                               
+                                    <%# Tên tiêu đề%>
+                               <div class="form-group">    
+                                   <label>Tiêu đề</label>
+                                   <input class="form-control" name="tieude" placeholder="Nhập tiêu đề" />
+                               </div>
+                                    <%# tên không dấu  %>
+                               <div class="form-group">    
+                                   <label>Tiêu đề không dấu</label>
+                                   <input class="form-control" name="tieudekhongdau" placeholder="Please Enter Category Order" />
+                               </div>
+                                    <%# Description %>
+                               <div class="form-group">    
+                                   <label>Description</label>
+                                   <input class="form-control" name="description" placeholder="Please Enter Category Order" />
+                               </div>
+
+                                     <%# content %>
+                                <div class="form-group">    
+                                   <label>Content</label>
+                                   <textarea name="content" class="ckeditor" ></textarea>
+                               </div>
+                                      <%#  image %>
+                               <div class="form-group">    
+                                   <label>Image</label>
+                                   <input type="file" name="image" >
+                               </div>
+                                    <%# important %>
+                                <div class="form-group">
+                                    <label>Important</label>
+                                    <label class="radio-inline">
+                                        <input name="important" value="1" checked="" type="radio">Có
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input name="important" value="0" type="radio">Không
+                                 </div>
+                                    
+                               
+
+                           <button type="submit" class="btn btn-default">Category Add</button>
+                           <button type="reset" class="btn btn-default">Reset</button>
+                       </form>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+        
+        <%- include('../layout/footer.admin.ejs') -%>
+        <script>
+            var loaiTinAjax = document.querySelector("#loaiTinAjax"); 
+            $(document).ready(function(){
+
+                $.ajax({
+                    url    :"admin/tintuc/getLoaiTin",
+                    method :"POST",
+                    data   : {
+                        data : $("#theloaiAjax").val() 
+                    }, 
+                    success: function(data){
+                        data.forEach((Element)=>{
+                            var option = document.createElement("option"); 
+                            option.innerText = Element.tenloaitin;  
+                            loaiTinAjax.appendChild(option); 
+                        }); 
+                    }
+                })
+                $("#theloaiAjax").change(function(){
+                    console.log("da chay");
+                    $.ajax({
+                    url    :"admin/tintuc/getLoaiTin",
+                    method :"POST",
+                    data   : {
+                        data : this.value 
+                    }, 
+                    success: function(data){
+                        $('#loaiTinAjax').empty();
+                        data.forEach((Element)=>{
+                            var option = document.createElement("option"); 
+                            option.innerText = Element.tenloaitin;  
+                            loaiTinAjax.appendChild(option); 
+                        }); 
+                    }
+                    })
+                })
+                
+            })
+            
+        </script>
